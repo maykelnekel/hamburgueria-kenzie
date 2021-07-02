@@ -14,7 +14,7 @@ function App() {
   ]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentSale, setCurrentSale] = useState({ total: 0, saleDetails: [] })
-  const {total, saleDetails} = currentSale
+  const { total, saleDetails } = currentSale
 
   const showProducts = (value) => {
     const filtered = products.filter(
@@ -29,7 +29,17 @@ function App() {
   }
   const handleClick = (productId) => {
     const finded = products.find(item => item.id == productId)
-    setCurrentSale({total: total + finded.price, saleDetails: [...saleDetails, finded]})
+    setCurrentSale({ total: total + finded.price, saleDetails: [...saleDetails, finded] })
+  }
+
+  const ShowSale = () => {
+   return saleDetails.map(element => 
+      <div>
+        <h1>{element.name}</h1>
+        <p>{element.category}</p>
+        <p>{element.price}</p>
+      </div>
+    )
   }
 
   return (
@@ -38,16 +48,24 @@ function App() {
         <h1>Hamburgueria da Kenzie</h1>
       </header>
       <section className='App-menuContainer'>
-        <button onClick={() => handleClick(2)} >Click</button>
-        {console.log(currentSale)}
-        <div>
-          <MenuContainer products={products} filteredProducts={filteredProducts} currentSale={currentSale} />
-          <div>
-            {total.toFixed(2)}
-          </div>
-        </div>
-        <div className='App-totalPrice'>
+        
 
+        <div>
+          <MenuContainer
+          products={products}
+          filteredProducts={filteredProducts}
+          currentSale={currentSale}
+          handleClick = {handleClick}
+          />
+        </div>
+
+        <div className='App-totalPrice'>
+          <h2>
+          Valor total da compra: R$ {total.toFixed(2)}
+          </h2>
+          <div>
+          {ShowSale()}
+          </div>
         </div>
       </section>
     </main>
