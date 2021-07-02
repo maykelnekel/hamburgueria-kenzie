@@ -10,7 +10,10 @@ function MenuContainer({ products, filteredProducts, currentSale }) {
             <div>
                 { products.map((item, index) => 
                 <div>
-                    <Product key = {index} products = {item} />
+                    <Product 
+                        key = {index}
+                        products = {item} 
+                    />
                 </div>
                 
                 )}
