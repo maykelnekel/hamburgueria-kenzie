@@ -46,3 +46,8 @@ div {
 	margin: 5px;
 	border: 1px solid black;
 }
+.Products-Cart,
+.Products-List {
+	display: flex;
+	flex-flow: row wrap;
+}

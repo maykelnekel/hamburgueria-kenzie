@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import MenuContainer from './Components/MenuContainer'
+import Product from './Components/Product';
 
 function App() {
   const [products, setProducts] = useState([
@@ -15,31 +16,13 @@ function App() {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentSale, setCurrentSale] = useState({ total: 0, saleDetails: [] })
   const { total, saleDetails } = currentSale
+  const [userInput, setUserInput] = useState('')
 
-  const showProducts = (value) => {
-    const filtered = products.filter(
-      item =>
-        item.name == value
-        ||
-        item.category == value
-        ||
-        item.price == value
-    )
-    setFilteredProducts([filtered])
-  }
   const handleClick = (productId) => {
     const finded = products.find(item => item.id == productId)
-    setCurrentSale({ total: total + finded.price, saleDetails: [...saleDetails, finded] })
-  }
-
-  const ShowSale = () => {
-   return saleDetails.map(element => 
-      <div>
-        <h1>{element.name}</h1>
-        <p>{element.category}</p>
-        <p>{element.price}</p>
-      </div>
-    )
+    if (!saleDetails.includes(finded)) {
+      setCurrentSale({ total: total + finded.price, saleDetails: [...saleDetails, finded] })
+    }
   }
 
   return (
@@ -48,25 +31,24 @@ function App() {
         <h1>Hamburgueria da Kenzie</h1>
       </header>
       <section className='App-menuContainer'>
-        
-
         <div>
           <MenuContainer
-          products={products}
-          filteredProducts={filteredProducts}
-          currentSale={currentSale}
-          handleClick = {handleClick}
+            products = {products}
+            filteredProducts = {filteredProducts}
+            setFilteredProducts = {setFilteredProducts}
+            userInput = {userInput}
+            setUserInput = {setUserInput}
           />
         </div>
-
-        <div className='App-totalPrice'>
-          <h2>
-          Valor total da compra: R$ {total.toFixed(2)}
-          </h2>
-          <div>
-          {ShowSale()}
-          </div>
-        </div>
+        <section>
+          <Product
+          handleClick={handleClick}
+          products={products}
+          saleDetails = {saleDetails}
+          total = {total}
+          filteredProducts = {filteredProducts}
+          />
+        </section>
       </section>
     </main>
   );
