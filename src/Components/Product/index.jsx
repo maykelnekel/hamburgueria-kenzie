@@ -4,13 +4,12 @@ function Product({ handleClick, products, saleDetails, total, filteredProducts }
     return (
         <div className='Products-container'>
             <div className='Products-List'>
-                {console.log(filteredProducts.length)}
                 {
                     filteredProducts.length > 0
-                        ?
-                        (filteredProducts.map((element, index) =>
-                            <div className='Product' key={index}>
-                                churros
+                    ?
+                    (filteredProducts.map((element, index) =>
+                    <div className='Product' key={index}>
+                                {console.log(filteredProducts.length)}
                                 {console.log(element)}
                                 <h4 className = 'Element-name'>{element.name}</h4>
                                 <p className = 'Element-category'>{element.category}</p>

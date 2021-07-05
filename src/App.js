@@ -4,6 +4,7 @@ import MenuContainer from './Components/MenuContainer'
 import Product from './Components/Product';
 
 function App() {
+  
   const [products, setProducts] = useState([
     { id: 1, name: 'Hamburguer', category: 'Sanduíches', price: 7.99 },
     { id: 2, name: 'X-Burguer', category: 'Sanduíches', price: 8.99 },

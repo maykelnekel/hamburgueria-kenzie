@@ -61,11 +61,9 @@ body {
 	font-family: var(--font-text);
 	color: var(--color-4);
 	background-color: var(--color-5);
-	height: 100vh;
+	min-height: 100vh;
 }
 .App {
-	
-	
 }
 .App-header {
 	background-color: var(--color-1);
@@ -126,7 +124,7 @@ button:hover {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: flex-start;
-	width: 20rem;
+	width: 18rem;
 	border: 2px dashed var(--color-1);
 	border-radius: 2.5px;
 	min-height: 5rem;
@@ -141,7 +139,7 @@ button:hover {
 	justify-content: center;
 	align-items: center;
 	margin: 5px;
-	width: 9rem;
+	width: 8rem;
 	line-height: 1.2rem;
 }
 .Cart {
@@ -183,3 +181,16 @@ button:hover {
 	text-shadow: 1px 1px 1px 1px var(--color-1);
 }
 
+@media only screen and (min-width: 768px) {
+
+	.Products-Cart,
+.Products-List {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	width: 18rem;
+	border: 2px dashed var(--color-1);
+	border-radius: 2.5px;
+	min-height: 5rem;
+}
+}

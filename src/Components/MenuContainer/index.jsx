@@ -10,7 +10,7 @@ function MenuContainer({ products, filteredProducts, setFilteredProducts,userInp
             ||
             item.price == value
         )
-        setFilteredProducts([filtered])
+        setFilteredProducts(filtered)
       }
     return (
         <section className = 'Filter' >
