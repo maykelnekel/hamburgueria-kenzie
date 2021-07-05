@@ -1,44 +1,52 @@
+
+
 function Product({ handleClick, products, saleDetails, total, filteredProducts }) {
     return (
-        <div>
+        <div className='Products-container'>
             <div className='Products-List'>
+                {console.log(filteredProducts.length)}
                 {
-                // console.log(filteredProducts)
-                filteredProducts.length > 0
-                ?
-                filteredProducts.map((element, index) =>
-                    <div key={index}>
-                        <h4>{element.name}</h4>
-                        <p>{element.category} </p>
-                        <p>{element.price} </p>
-                        <button onClick={() => handleClick(element.id)}>Adicionar</button>
-                    </div>
-                )
-                :
-                products.map((element) =>
-                    <div key={element.id}>
-                        <h4>{element.name}</h4>
-                        <p>{element.category} </p>
-                        <p>{element.price} </p>
-                        <button onClick={() => handleClick(element.id)}>Adicionar</button>
-                    </div>
-                   
-                )
+                    filteredProducts.length > 0
+                        ?
+                        (filteredProducts.map((element, index) =>
+                            <div className='Product' key={index}>
+                                churros
+                                {console.log(element)}
+                                <h4 className = 'Element-name'>{element.name}</h4>
+                                <p className = 'Element-category'>{element.category}</p>
+                                <p className = 'Element-price'>R$ {element.price}</p>
+                                <button onClick={() => handleClick(element.id)}>Adicionar</button>
+                            </div>
+                        ))
+                        :
+                        (products.map((element) =>
+                            <div className='Product' key={element.id}>
+                                <h4 className = 'Element-name' >{element.name}</h4>
+                                <p className = 'Element-category'>{element.category}</p>
+                                <p className = 'Element-price'>R$ {element.price}</p>
+                                <button onClick={() => handleClick(element.id)}>Adicionar</button>
+                            </div>
+                        ))
                 }
+
             </div>
-            <div className = 'Cart'>
-                <h2>
-                    Valor total da compra: R$ {total.toFixed(2)}
+            <div className='Cart'>
+                {/* <h2>
+                   Produtos no carrinho:
+                </h2> */}
+                <h2 className = 'Products-total'>
+                    Valor total da compra: <strong>R$ {total.toFixed(2)}</strong>
                 </h2>
                 <div className='Products-Cart'>
-                    {saleDetails.map((element )=>
-                        <div key={element.id}>
-                            <h1>{element.name}</h1>
-                            <p>{element.category}</p>
-                            <p>{element.price}</p>
+                    {saleDetails.map((element) =>
+                        <div className='Product-inCart' key={element.id}>
+                            <h1 className = 'Element-name'>{element.name}</h1>
+                            <p className = 'Element-category'>{element.category}</p>
+                            <p className = 'Element-price'>R$ {element.price}</p>
                         </div>
                     )}
                 </div>
+                
             </div>
         </div>
     )

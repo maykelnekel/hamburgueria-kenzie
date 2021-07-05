@@ -28,7 +28,7 @@ function App() {
   return (
     <main className="App">
       <header className="App-header">
-        <h1>Hamburgueria da Kenzie</h1>
+        <h1>Kenzie Burguer</h1>
       </header>
       <section className='App-menuContainer'>
         <div>

@@ -42,12 +42,144 @@ table {
 	border-spacing: 0;
 }
 
-div {
-	margin: 5px;
-	border: 1px solid black;
+/* FIM DO RESET */
+
+:root {
+	--font-title: 'Alfa Slab One', cursive;
+	--font-text: 'Amatic SC', cursive;
+	--color-1: rgb(233, 159, 0);
+	--color-2: rgb(148, 91, 26);
+	--color-3: rgb(255, 255, 255);
+	--color-4: rgb(27, 27, 27);
+	--color-5: rgb(230, 230, 230);
+	
+}
+body {
+	
+}
+#root {
+	font-family: var(--font-text);
+	color: var(--color-4);
+	background-color: var(--color-5);
+	height: 100vh;
+}
+.App {
+	
+	
+}
+.App-header {
+	background-color: var(--color-1);
+	width: 100vw;
+	text-align: center;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+.App-header h1{
+	font-size: 2rem;
+	letter-spacing: 2px;
+	font-family: var(--font-title);
+	color: var(--color-2);
+}
+.Filter {
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+.Filter input {
+	background-color: var(--color-5);
+	border-radius: 2.5px;
+	border: 3px double var(--color-1);
+	margin-right: 5px;
+	color: var(--color-2);
+	font-family: var(--font-text);
+	width: 150px;
+}
+.Filter input:focus {
+	border: 3px double var(--color-1);
+	box-shadow: 0px 0px 5px 1px  var(--color-2);
+	outline: none;
+	color: var(--color-2);
+	font-family: var(--font-text);
+}
+.Filter button {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.Products-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+button {
+	background-color: var(--color-1);
+	border: none;
+	border-radius: 2.5px;
+	color: var(--color-3);
+	font-family: var(--font-title);
+	font-size: 0.7rem;
+}
+button:hover {
+	filter: brightness(115%);
 }
 .Products-Cart,
 .Products-List {
 	display: flex;
 	flex-flow: row wrap;
+	justify-content: flex-start;
+	width: 20rem;
+	border: 2px dashed var(--color-1);
+	border-radius: 2.5px;
+	min-height: 5rem;
 }
+.Products-List {
+
+}
+.Product,
+.Product-inCart {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 5px;
+	width: 9rem;
+	line-height: 1.2rem;
+}
+.Cart {
+	margin-top: 20px ;
+}
+.Cart h2 {
+	margin-top: 5px ;
+	font-size: larger;
+	font-weight: bolder;
+
+}
+.Products-total {
+	margin-top: 5px ;
+	margin-bottom: 15px;
+	font-weight: bolder;
+}
+.Products-total strong {
+	font-size: 1.1rem;
+	font-family: var(--font-title);
+	color: var(--color-1);
+
+}
+.Element-name {
+	font-weight: bolder;
+	font-family: var(--font-title);
+	color: var(--color-2);
+	font-size: 0.8rem;
+	font-weight: lighter;
+}
+.Element-category {
+	font-weight: lighter;
+	font-size: 0.8rem;
+	font-style: italic;
+}
+.Element-price {
+	font-weight: bolder;
+	font-family: var(--font-title);
+	font-size: 0.75rem;
+	text-shadow: 1px 1px 1px 1px var(--color-1);
+}
+

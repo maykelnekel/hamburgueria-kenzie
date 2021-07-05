@@ -1,4 +1,3 @@
-import Product from '../Product'
 
 
 function MenuContainer({ products, filteredProducts, setFilteredProducts,userInput, setUserInput }) {
@@ -14,7 +13,7 @@ function MenuContainer({ products, filteredProducts, setFilteredProducts,userInp
         setFilteredProducts([filtered])
       }
     return (
-        <section>
+        <section className = 'Filter' >
                 <input
                 placeholder = 'Filtre seu produto'
                 type="text"
