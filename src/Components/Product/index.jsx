@@ -30,9 +30,9 @@ function Product({ handleClick, products, saleDetails, total, filteredProducts }
 
             </div>
             <div className='Cart'>
-                {/* <h2>
-                   Produtos no carrinho:
-                </h2> */}
+                <h2>
+                <strong>Carrinho</strong>
+                </h2>
                 <h2 className = 'Products-total'>
                     Valor total da compra: <strong>R$ {total.toFixed(2)}</strong>
                 </h2>

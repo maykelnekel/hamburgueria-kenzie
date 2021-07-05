@@ -79,7 +79,9 @@ body {
 	color: var(--color-2);
 }
 .Filter {
-	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	margin-top: 20px;
 	margin-bottom: 10px;
 }
@@ -123,7 +125,7 @@ button:hover {
 .Products-List {
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: flex-start;
+	justify-content: center;
 	width: 18rem;
 	border: 2px dashed var(--color-1);
 	border-radius: 2.5px;
@@ -151,16 +153,25 @@ button:hover {
 	font-weight: bolder;
 
 }
+.Product-inCart {
+	border: 2px dashed var(--color-1);
+}
+
 .Products-total {
-	margin-top: 5px ;
+	margin-top: 15px ;
 	margin-bottom: 15px;
 	font-weight: bolder;
 }
-.Products-total strong {
+.Cart .Products-total strong {
 	font-size: 1.1rem;
 	font-family: var(--font-title);
 	color: var(--color-1);
 
+}
+.Cart strong {
+	font-size: 1.8rem;
+	border-bottom: 2px solid var(--color-1);
+	margin-bottom: 15px;
 }
 .Element-name {
 	font-weight: bolder;
@@ -181,16 +192,58 @@ button:hover {
 	text-shadow: 1px 1px 1px 1px var(--color-1);
 }
 
-@media only screen and (min-width: 768px) {
 
+
+@media only screen and (min-width: 768px) {
+	.App-header h1{
+		font-size: 4rem;
+		
+	}
+	
 	.Products-Cart,
-.Products-List {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: flex-start;
-	width: 18rem;
-	border: 2px dashed var(--color-1);
-	border-radius: 2.5px;
-	min-height: 5rem;
-}
+	.Products-List {
+		width: 35rem;
+	}
+	.Product,
+	.Product-inCart {
+		width: 10rem;
+		height: 6rem;
+		line-height: 1.5rem;
+	}
+
+	.Filter input {
+		width: 200px;
+		padding: 0.5rem 1rem;
+		font-size: larger;
+	}
+	.Filter button {
+		font-size: larger;
+		padding: 10px;
+	}
+	button {
+		font-size: 1rem;
+	}
+	.Element-name {
+		font-size: 1.3rem;
+	}
+	.Element-category {
+		font-size: 1.2rem;
+	}
+	.Element-price {
+		font-size: 1rem;
+	}
+	.Cart h2 {
+		font-size: 1.9rem;
+	}
+	.Products-total strong {
+		font-size: 1.9rem;
+	}
+	.Cart .Products-total strong {
+		font-size: 1.9rem;
+	}
+	.Cart strong {
+		font-size: 2.5rem;
+		border-bottom: 2px solid var(--color-1);
+		margin-bottom: 15px;
+	}
 }

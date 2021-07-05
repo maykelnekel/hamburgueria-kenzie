@@ -4,9 +4,9 @@ function MenuContainer({ products, filteredProducts, setFilteredProducts,userInp
     const showProducts = (value) => {
         const filtered = products.filter(
           item =>
-            item.name == value
+            item.name.toUpperCase() == value.toUpperCase()
             ||
-            item.category == value
+            item.category.toUpperCase() == value.toUpperCase()
             ||
             item.price == value
         )
