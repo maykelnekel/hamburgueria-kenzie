@@ -23,6 +23,8 @@ function App() {
     const finded = products.find(item => item.id == productId)
     if (!saleDetails.includes(finded)) {
       setCurrentSale({ total: total + finded.price, saleDetails: [...saleDetails, finded] })
+    } else {
+      alert('O item já está no carrinho!')
     }
   }
 
